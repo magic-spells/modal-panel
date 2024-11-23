@@ -1,6 +1,6 @@
 {
   "name": "@magic-spells/modal-panel",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A lightweight, customizable Modal Panel web component for creating accessible and responsive modals. Ideal for dialogs, alerts, or interactive panels, with features like smooth animations, focus management, and keyboard navigation support.",
   "author": "Cory Schulz",
   "license": "MIT",
@@ -11,7 +11,7 @@
   "sideEffects": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/magic-spells/modal-panel"
+    "url": "git+https://github.com/magic-spells/modal-panel.git"
   },
   "homepage": "https://github.com/magic-spells/modal-panel#readme",
   "bugs": {
