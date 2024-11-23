@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<title>Modal Panel Demo</title>
+		<link rel="stylesheet" href="./modal-panel.css" />
+		<style>
+			/* Demo-specific styles */
+			body {
+				font-family: Arial, sans-serif;
+				margin: 0;
+				padding: 0;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 100vh;
+				background-color: #f9f9f9;
+			}
+
+			[data-action='show-modal'] {
+				padding: 10px 20px;
+				background-color: #007bff;
+				color: #fff;
+				border: none;
+				cursor: pointer;
+				font-size: 16px;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- Trigger Button -->
+		<button data-action="show-modal" aria-controls="demo-modal">
+			Open Modal
+		</button>
+
+		<!-- Modal Panel Component -->
+		<modal-panel id="demo-modal" class="p-gutter">
+			<modal-content class="p-4 max-h-[80vh] overflow-y-scroll">
+				<focus-trap>
+					<button
+						aria-label="hide panel"
+						class="absolute top-0 right-0 fs-20 m-2 md:p-4 lg:p-8 leading-0"
+						data-action="hide-modal">
+						&times;
+					</button>
+					<div class="content">
+						<h2>Modal Title</h2>
+						<p>
+							This is a demonstration of the modal panel component.
+							You can add your content here.
+						</p>
+					</div>
+				</focus-trap>
+			</modal-content>
+		</modal-panel>
+
+		<script src="./modal-panel.js" type="module"></script>
+	</body>
+</html>
