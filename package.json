@@ -1,7 +1,7 @@
 {
   "name": "@magic-spells/modal-panel",
   "version": "0.1.1",
-  "description": "A lightweight, customizable Modal Panel web component for creating accessible and responsive modals. Ideal for dialogs, alerts, or interactive panels, with features like smooth animations, focus management, and keyboard navigation support.",
+  "description": "A lightweight, customizable Modal Panel web component for creating accessible and responsive modals.",
   "author": "Cory Schulz",
   "license": "MIT",
   "type": "commonjs",
