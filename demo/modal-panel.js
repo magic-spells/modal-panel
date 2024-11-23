@@ -81,3 +81,4 @@
 	customElements.define('modal-content', ModalContent);
 
 })();
+//# sourceMappingURL=modal-panel.js.map

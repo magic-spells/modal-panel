@@ -1,60 +1,60 @@
 {
-	"name": "@magic-spells/modal-panel",
-	"version": "0.1.0",
-	"description": "Bottom sheet web component",
-	"author": "Cory Schulz",
-	"license": "MIT",
-	"type": "commonjs",
-	"main": "dist/modal-panel.min.js",
-	"unpkg": "dist/modal-panel.min.js",
-	"style": "dist/modal-panel.min.css",
-	"sideEffects": true,
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/magic-spells/modal-panel"
-	},
-	"homepage": "https://github.com/magic-spells/modal-panel#readme",
-	"bugs": {
-		"url": "https://github.com/magic-spells/modal-panel/issues"
-	},
-	"keywords": [
-		"modal-panel",
-		"web-components",
-		"accessibility",
-		"a11y",
-		"keyboard-navigation",
-		"custom-elements"
-	],
-	"files": [
-		"dist/",
-		"src/"
-	],
-	"scripts": {
-		"build": "rollup -c",
-		"lint": "eslint src/ rollup.config.mjs",
-		"format": "prettier --write .",
-		"prepublishOnly": "npm run build",
-		"serve": "rollup -c --watch"
-	},
-	"publishConfig": {
-		"access": "public",
-		"registry": "https://registry.npmjs.org/"
-	},
-	"browserslist": [
-		"last 2 versions",
-		"not dead",
-		"not ie <= 11"
-	],
-	"devDependencies": {
-		"@eslint/js": "^8.57.0",
-		"@rollup/plugin-node-resolve": "^15.2.3",
-		"@rollup/plugin-terser": "^0.4.4",
-		"eslint": "^8.0.0",
-		"globals": "^13.24.0",
-		"prettier": "^3.3.3",
-		"rollup": "^3.0.0",
-		"rollup-plugin-copy": "^3.5.0",
-		"rollup-plugin-postcss": "^4.0.2",
-		"rollup-plugin-serve": "^1.1.1"
-	}
+  "name": "@magic-spells/modal-panel",
+  "version": "0.1.0",
+  "description": "Modal Panel web component",
+  "author": "Cory Schulz",
+  "license": "MIT",
+  "type": "commonjs",
+  "main": "dist/modal-panel.min.js",
+  "unpkg": "dist/modal-panel.min.js",
+  "style": "dist/modal-panel.min.css",
+  "sideEffects": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magic-spells/modal-panel"
+  },
+  "homepage": "https://github.com/magic-spells/modal-panel#readme",
+  "bugs": {
+    "url": "https://github.com/magic-spells/modal-panel/issues"
+  },
+  "keywords": [
+    "modal-panel",
+    "web-components",
+    "accessibility",
+    "a11y",
+    "keyboard-navigation",
+    "custom-elements"
+  ],
+  "files": [
+    "dist/",
+    "src/"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "lint": "eslint src/ rollup.config.mjs",
+    "format": "prettier --write .",
+    "prepublishOnly": "npm run build",
+    "serve": "rollup -c --watch"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "not dead",
+    "not ie <= 11"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^8.57.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "eslint": "^8.0.0",
+    "globals": "^13.24.0",
+    "prettier": "^3.3.3",
+    "rollup": "^3.0.0",
+    "rollup-plugin-copy": "^3.5.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-serve": "^1.1.1"
+  }
 }
