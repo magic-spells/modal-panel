@@ -1,3 +1,5 @@
+import './modal-panel.css';
+
 class ModalPanel extends HTMLElement {
 	constructor() {
 		super();

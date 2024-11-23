@@ -64,7 +64,7 @@
 		}
 
 		bindUI() {
-			this.addEventListener('click', (e) => {
+			this.addEventListener('click', () => {
 				this.modalPanel.hide();
 			});
 		}
@@ -79,4 +79,6 @@
 	customElements.define('modal-panel', ModalPanel);
 	customElements.define('modal-overlay', ModalOverlay);
 	customElements.define('modal-content', ModalContent);
+
 })();
+//# sourceMappingURL=modal-panel.js.map
