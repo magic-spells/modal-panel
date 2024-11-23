@@ -31,35 +31,35 @@ Or include directly in your HTML:
 
 ```html
 <button
-  id="show-modal-button"
-  aria-controls="modal-panel"
-  aria-expanded="false">
-  Open Modal
+	id="show-modal-button"
+	aria-controls="modal-panel"
+	aria-expanded="false">
+	Open Modal
 </button>
 
 <modal-panel id="modal-panel" aria-hidden="true">
-  <modal-overlay></modal-overlay>
+	<modal-overlay></modal-overlay>
 
-  <modal-content>
-    <button aria-label="Close Modal" data-action="hide-modal">
-      &times;
-    </button>
+	<modal-content>
+		<button aria-label="Close Modal" data-action="hide-modal">
+			&times;
+		</button>
 
-    <div>
-      <h2>Modal Title</h2>
-      <p>
-        This is a demonstration of the modal panel component. Add your
-        content here.
-      </p>
-    </div>
-  </modal-content>
+		<div>
+			<h2>Modal Title</h2>
+			<p>
+				This is a demonstration of the modal panel component. Add your
+				content here.
+			</p>
+		</div>
+	</modal-content>
 </modal-panel>
 
 <script>
-  const button = document.getElementById('show-modal-button');
-  const modal = document.getElementById('modal-panel');
+	const button = document.getElementById('show-modal-button');
+	const modal = document.getElementById('modal-panel');
 
-  button.addEventListener('click', () => modal.show());
+	button.addEventListener('click', () => modal.show());
 </script>
 ```
 
@@ -78,16 +78,16 @@ You can style the Modal Panel by overriding or extending the provided CSS:
 
 ```css
 modal-panel {
-  /* Customize your modal panel */
+	/* Customize your modal panel */
 }
 
 modal-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.5);
 }
 
 [data-action='hide-modal'] {
-  font-size: 24px;
-  color: #333;
+	font-size: 24px;
+	color: #333;
 }
 ```
 
