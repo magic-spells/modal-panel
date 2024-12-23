@@ -31,6 +31,7 @@ export default [
 				targets: [
 					{ src: 'dist/modal-panel.js', dest: 'demo' },
 					{ src: 'dist/modal-panel.min.css', dest: 'demo' },
+					{ src: 'dist/modal-panel.js.map', dest: 'demo' },
 				],
 				hook: 'writeBundle',
 			}),
@@ -47,7 +48,7 @@ export default [
 		plugins: [
 			resolve(),
 			postcss({
-				extract: 'dist/modal-panel.min.css', // Minified CSS output
+				extract: 'modal-panel.min.css', // Minified CSS output
 				minimize: true,
 			}),
 			terser({
