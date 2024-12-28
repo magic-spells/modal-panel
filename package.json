@@ -4,10 +4,19 @@
   "description": "A lightweight, customizable Modal Panel web component for creating accessible and responsive modals.",
   "author": "Cory Schulz",
   "license": "MIT",
-  "type": "commonjs",
-  "main": "dist/modal-panel.min.js",
+  "type": "module",
+  "main": "dist/modal-panel.cjs.js",
+  "module": "dist/modal-panel.esm.js",
   "unpkg": "dist/modal-panel.min.js",
   "style": "dist/modal-panel.min.css",
+  "exports": {
+    ".": {
+      "import": "./dist/modal-panel.esm.js",
+      "require": "./dist/modal-panel.cjs.js",
+      "default": "./dist/modal-panel.esm.js"
+    },
+    "./style.css": "./dist/modal-panel.min.css"
+  },
   "sideEffects": true,
   "repository": {
     "type": "git",
@@ -57,5 +66,8 @@
     "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-serve": "^1.1.1"
+  },
+  "dependencies": {
+    "@magic-spells/focus-trap": "^1.0.4"
   }
 }

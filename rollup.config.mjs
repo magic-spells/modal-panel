@@ -6,56 +6,82 @@ import postcss from 'rollup-plugin-postcss';
 
 const dev = process.env.ROLLUP_WATCH;
 
+// Shared CSS plugin config to avoid duplicate processing
+const cssPlugin = postcss({
+	extract: 'modal-panel.min.css',
+	minimize: true,
+});
+
 export default [
-	// Development build
+	// ESM build
 	{
 		input: 'src/modal-panel.js',
 		output: {
-			file: 'dist/modal-panel.js',
-			format: 'iife',
-			sourcemap: dev,
+			file: 'dist/modal-panel.esm.js',
+			format: 'es',
+			sourcemap: true,
 		},
-		plugins: [
-			resolve(),
-			postcss({
-				extract: 'modal-panel.min.css',
-				minimize: true,
-			}),
-			dev &&
-				serve({
-					contentBase: ['dist', 'demo'],
-					open: true,
-					port: 3000,
-				}),
-			copy({
-				targets: [
-					{ src: 'dist/modal-panel.js', dest: 'demo' },
-					{ src: 'dist/modal-panel.min.css', dest: 'demo' },
-					{ src: 'dist/modal-panel.js.map', dest: 'demo' },
-				],
-				hook: 'writeBundle',
-			}),
-		],
+		plugins: [resolve(), cssPlugin],
 	},
-	// Production build (minified)
+	// CommonJS build
+	{
+		input: 'src/modal-panel.js',
+		output: {
+			file: 'dist/modal-panel.cjs.js',
+			format: 'cjs',
+			sourcemap: true,
+			exports: 'named',
+		},
+		plugins: [resolve(), cssPlugin],
+	},
+	// Minified IIFE for browsers
 	{
 		input: 'src/modal-panel.js',
 		output: {
 			file: 'dist/modal-panel.min.js',
 			format: 'iife',
+			name: 'ModalPanel',
 			sourcemap: false,
 		},
 		plugins: [
 			resolve(),
-			postcss({
-				extract: 'modal-panel.min.css', // Minified CSS output
-				minimize: true,
-			}),
+			cssPlugin,
 			terser({
+				keep_classnames: true,
 				format: {
 					comments: false,
 				},
 			}),
 		],
 	},
+	// Development build
+	...(dev
+		? [
+				{
+					input: 'src/modal-panel.js',
+					output: {
+						file: 'dist/modal-panel.esm.js',
+						format: 'es',
+						sourcemap: true,
+					},
+					plugins: [
+						resolve(),
+						cssPlugin,
+						serve({
+							contentBase: ['dist', 'demo'],
+							open: true,
+							port: 3000,
+						}),
+						copy({
+							targets: [
+								{ src: 'dist/modal-panel.esm.js', dest: 'demo' },
+								{ src: 'dist/modal-panel.esm.js.map', dest: 'demo' },
+								{ src: 'dist/modal-panel.min.css', dest: 'demo' },
+							],
+							hook: 'writeBundle',
+						}),
+					],
+				},
+			]
+		: []),
 ];
